@@ -1,22 +1,22 @@
 import React from 'react';
-// import { List, Item, Button} from './ContactsStyled'
+import { List, Item, Button } from './ContactsStyled';
 
 const ContactList = ({ onFilter, onDelete }) => {
   return (
-    <div>
+    <List>
       {onFilter.map(({ name, number, id }) => {
         return (
-          <div key={id}>
+          <Item key={id}>
             <span>{name}:</span>
             <span>{number}:</span>
 
-            <button type="button" onClick={() => onDelete(id)}>
+            <Button type="button" onClick={() => onDelete(id)}>
               Delete
-            </button>
-          </div>
+            </Button>
+          </Item>
         );
       })}
-    </div>
+    </List>
   );
 };
 
